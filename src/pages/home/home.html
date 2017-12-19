@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="head">
+    <h6>User Form</h6>
+  </div>
+
+
+  <!-- <form novalidate [formGroup]="userForm"></form> -->
+
+
+
+  <form  novalidate (ngSubmit)="onSubmit(userForm)" [formGroup]="userForm">
+    <div class="inps">
+      <label>name</label>
+      <input autocomplete="off" formControlName="name" name="name" type="text" placeholder="Enter Name">
+    </div>
+    <div class="err"  *ngIf="!userForm.get('name').valid && userForm.get('name').touched">enter Correct Name</div>
+    
+    <div class="inps">
+        <label>Age</label>
+        <input autocomplete="off" formControlName="age" name="age" type="number" placeholder="Enter Age">
+      </div>
+      <div class="err"  *ngIf="!userForm.get('age').valid && userForm.get('age').touched ">enter Correct Age</div>
+      
+      <div class="inps">
+          <label>Email</label>
+          <input autocomplete="off" formControlName="email" name="email" type="email" placeholder="Enter email">
+        </div>
+        <div *ngIf="userForm.get('email').errors">
+          <div class="err"  *ngIf="!userForm.get('email').valid && userForm.get('email').touched && userForm.get('email').errors?.required">enter Correct Email</div>
+          <div class="err"  *ngIf="!userForm.get('email').valid && userForm.get('email').touched && !userForm.get('email').errors?.required  && userForm.get('email').errors?.emailblacklisted">email blacklisted</div>
+          <div class="err"  *ngIf="!userForm.get('email').valid && userForm.get('email').touched && !userForm.get('email').errors?.required && userForm.get('email').errors?.attheratenotpresent">@ not present</div>
+        </div>
+        
+
+
+    <div class="inps">
+      <label >Qualification</label>
+      <select formControlName="qualification"  name="qualification" id="" >
+        <option value="Btech">Btech</option>
+        <option value="Architecture">Architecture</option>
+        <option value="Commerce">Commerce</option>
+      </select>
+    </div>
+
+    <div class="inps">
+        <label >Experience</label>
+        <select formControlName="experienceYr" name="experienceYr"  id="" class="selYr">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <label for="" style="width: 18px;margin: 2px;">Yr</label>
+          <select formControlName="experienceMon" name="experienceMon"  id="" class="selmon">
+              <option  value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            <label for="" style="width: 37px;margin: 2px;">Mon</label>
+    </div>
+    <div class="inps">
+        <label >Mobile Number</label>
+        <input autocomplete="off" formControlName="mobileno" name="mobileno"  type="number" placeholder="Enter Number">
+    </div>
+    <div class="err" *ngIf="!userForm.get('mobileno').valid && userForm.get('mobileno').touched">Enter Correct mobile No</div>
+    <div class="inps">
+      <button type="submit" [disabled]="!userForm.valid" class="btn">Submit Job</button>
+    </div>
+  </form>
+
+
+
+</div>

@@ -1,0 +1,101 @@
+page-home {
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    height: 650px;
+    background-color: lightgreen;
+
+    .head{
+        text-align: center;
+    }
+
+      h6{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 25px;
+        color:white;
+        background-color: lightskyblue;
+        height: 45px;
+        padding-top: 4px;
+    }
+
+    .inps label{
+            font-size: 15px;
+            display: inline-block;
+            width: 120px;
+            height: 35px;
+            margin-left: 15px;
+    }
+
+    .inps input{
+        border: none;
+        height: 35px;
+        width: 170px;
+        margin-top: 10px;
+        font-size: 15px;
+        padding-left: 10px;
+        border-radius: 10px;
+        background-color: darkgoldenrod;
+        color: white;
+    }
+    
+    
+    .inps select{
+        border: none;
+        height: 35px;
+        width: 170px;
+        margin-top: 10px;
+        font-size: 15px;
+        padding-left: 10px;
+        border-radius: 10px;
+        background-color: darkgoldenrod;
+        color: white;
+        outline: none;
+
+    }
+
+    .inps .selYr{
+        width: 50px;
+    }
+
+    .inps .selmon{
+        width: 50px;
+    }
+    .inps .btn{
+        width: 145px;
+        height: 40px;
+        text-align: center;
+        margin-top: 150px;
+        position: absolute;
+        left: 30%;
+        color: white;
+        background-color: darkgoldenrod;
+        border-radius: 10px;
+        font-size: 16px;
+        transition:  0.25s ease-in-out;
+    }
+
+    .inps .btn:active{
+        background-color: green;
+        transition: 0.5s ease-in-out;
+    }
+
+    .err{
+        text-align: center;
+        color: red;
+    }
+
+    ::-webkit-input-placeholder{
+        color: white;
+    }
+    
+}
+
+
+}
